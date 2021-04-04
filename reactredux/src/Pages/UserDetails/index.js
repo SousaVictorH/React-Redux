@@ -38,8 +38,6 @@ function UserDetails() {
         // eslint-disable-next-line
     }, [userId]);
 
-    console.log(user);
-
     if (!user) {
         return(
             <AppLoading />

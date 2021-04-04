@@ -1,13 +1,13 @@
 const INITIAL_STATE = {
-    users: [],
+    user: null,
 };
 
 export default function Reducer(state = INITIAL_STATE, action) {
     switch (action.type) {
-        case 'SET_USERS':
+        case 'SET_USER':
             return {
                 ...state,
-                users: action.payload.users
+                user: action.payload,
             }
     
         default:

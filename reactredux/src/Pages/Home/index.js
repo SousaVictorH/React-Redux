@@ -1,27 +1,54 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
+import UserList from '../../Components/UserList';
 import { Container } from './styles';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import { createSelector } from 'reselect';
-// import { makeSelectUsers } from '../../store/selector';
+import { setUser } from '../../store/actions/homePageActions';
+import api from '../../Services/api';
 
-// const stateSelector = createSelector(makeSelectUsers, (users) => {
-//     return users;
-// });
+const actionDispatch = (dispatch) => ({
+    setUser: (user) => dispatch(setUser(user)),
+})
 
 function Home() {
     const users = useSelector(state => state.homePageReducer.users);
-    // const state = useSelector(stateSelector);
+    const { setUser } = actionDispatch(useDispatch());
 
-    console.log(users);
+    useEffect(() => {
+        const fetchUsers = async () => {
+            const response = await api.get('users').catch(err => {
+                console.warn(err);
+            });
+    
+            setUser(response.data.data);
+        }
+
+        fetchUsers();
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <Container>
-            <h1>Hello world!</h1>
+            <UserList 
+                users={users}
+            />
         </Container>
     )
 }
 
 export default Home;
+
+/*
+    Uma alternativa para pegar dados do redux:
+
+    import { createSelector } from 'reselect';
+    import { makeSelectUsers } from '../../store/selector';
+
+    const stateSelector = createSelector(makeSelectUsers, (users) => {
+        return users;
+    });
+
+    const state = useSelector(stateSelector);
+*/

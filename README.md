@@ -1,5 +1,5 @@
 # :closed_book: React-Redux
-Repository designed to improvemy skills with react/redux.
+Repository designed to improvemy skills with react, redux and axios (learning how to get data from an external API).
 
 ## :question: About the project
 

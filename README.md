@@ -16,6 +16,7 @@ The main goal of this project is to improve my skills with Redux
 
 - [React](https://pt-br.reactjs.org/)
 - [Redux](https://redux.js.org/)
+- [Axios](https://github.com/axios/axios)
 
 <!-- GETTING STARTED -->
 

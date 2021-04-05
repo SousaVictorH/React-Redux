@@ -9,7 +9,7 @@ The main goal of this project is to improve my skills with Redux
   
 <div>
   <h3>Default Page</h3>
-  <img src="https://github.com/SousaVictorH/RecDiscord/blob/master/clone-discord/public/videos/discord.gif" alt="Login">
+  <img src="https://github.com/SousaVictorH/React-Redux/blob/master/reactredux/public/videos/reactRedux.gif" alt="Default">
 </div>
 
 ###  :hammer: Made with
